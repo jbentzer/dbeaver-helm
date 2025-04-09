@@ -1,6 +1,6 @@
-# Default values for dbeaver.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+# Values for dbeaver.
+# helm push dbeaver-0.0.1.tgz oci://registry-1.docker.io/janben
+# helm upgrade --install dbeaver ./dbeaver -f values.yaml
 
 replicaCount: 1
 hostNetwork: false
@@ -30,7 +30,8 @@ ingress:
   tlsSecretName: "dbeaver.{{ .Values.domain }}"
   hostname: "dbeaver.{{ .Values.domain }}"
   annotations:
-    kubernetes.io/ingress.class: nginx
+    #kubernetes.io/ingress.class: nginx
+    spec.ingressClassName: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   path: "/"
 
@@ -43,7 +44,7 @@ resources:
     cpu: 100m
     memory: "128Mi"
   limits:
-    cpu: 200m
-    memory: "256Mi"
+    cpu: 500m
+    memory: "512Mi"
 
 domain: mydomain.com
