@@ -1,5 +1,7 @@
 # DBeaver (CloudBeaver)
 
+This is a fork of https://github.com/bsgrigorov/dbeaver-helm.
+
 Helm chart for CloudBeaver, the docker based child application of DBeaver.
 
 Deploy with
