@@ -7,7 +7,7 @@ hostNetwork: false
 image:
   repository: dbeaver/cloudbeaver
   pullPolicy: IfNotPresent
-  tag: "21.3.0"
+  tag: "25.0.4"
 
 securityContext: {}
 
